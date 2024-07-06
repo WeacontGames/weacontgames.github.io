@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    background: linear-gradient(#17002c, #000000);
+    background-size: cover; /* Arka planın boyutunu belirleme */
+    background-attachment: fixed; /* Arka planın sabit kalmasını sağlama */
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    margin-right: 50px; /* Arzu ettiğiniz boşluk ayarı */
+}
+
+.logo img {
+    width: 450px;
+}
+p{
+    max-width: 550px;
+}
+.content {
+    text-align: left;
+}
+
+.watch-trailer {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.watch-trailer:hover {
+    background-color: #555;
+}
+
+.watch-trailer i {
+    margin-right: 10px; /* İkon ile metin arasındaki boşluk */
+    font-size: 24px; /* İkon boyutu */
+}
+
+.watch-trailer .text {
+    font-size: 16px; /* Metin boyutu */
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin: 20px 0;
+    }
+
+    .logo img {
+        width: 250px; /* Logonun boyutunu telefon boyutuna uygun olarak ayarlayın */
+    }
+
+    .content {
+        margin: 20px;
+    }
+
+    .watch-trailer {
+        display: block;
+        margin: 20px auto;
+    }
+}
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.video-popup.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+
+#video-player {
+    width: 100vw;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    z-index: 10000;
+}
+
+
